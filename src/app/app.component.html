@@ -1,1 +1,28 @@
-<router-outlet></router-outlet>
+<header [class.scroll-header]="!isTop" [class.miniScreen-header]="isHeaderAbsolute">
+    <nav>
+      <a class="head-href" routerLink="/home" routerLinkActive="href-active">{{'home' | translate}}</a>
+      <a class="head-href" routerLink="/livetv" routerLinkActive="href-active">{{'livetv' | translate}}</a>
+      <a class="head-href" routerLink="/ondemand" routerLinkActive="href-active">{{'ondemand' | translate}}</a>
+      <div class="language-wrap" (mouseenter)="showLanguageList()" (mouseleave)="hideLanguageList()">
+        <div class="lang-set">{{'language' | translate}}
+          <div class="bottom-triangle"></div>
+        </div>
+        <ul class="lang-ul" [ngStyle]="{'display': isShowLanguageList ? 'block': 'none'}">
+          <li class="lang-li" (click)="changeLanguage('en')">En</li>
+          <li class="lang-li" (click)="changeLanguage('zh')">中文</li>
+        </ul>
+      </div>
+      <div class="user-nav" *ngIf="isShowUserInfo">
+        <div class="name">{{userName}}</div>
+      </div>
+    </nav>
+  </header>
+   
+<main>
+    <router-outlet></router-outlet>
+    <div class="goto-top" [ngStyle]="{'display': showGotoTopButton ? 'block': 'none'}" (click)="gotoTop()">{{'top' | translate}}</div>
+</main>
+
+<footer>
+    <div class="foot-info">{{'all_rights_reserved' | translate}}</div>
+</footer>

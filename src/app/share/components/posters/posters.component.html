@@ -1,0 +1,12 @@
+<div class="poster-body" *ngFor="let column of columns;let i = index;">
+    <div class="column-title">{{column?.name | translate}}</div>
+    <div class="left-arrow cant-select" (click)="clickLeftArrow(i)">L</div>
+    <div class="poster-wrap">
+      <div #posterListsRef class="poster-list">
+        <div class="poster-item" *ngFor="let vod of column.vods; let j = index;">
+          <img #imgItem focus src="{{vod.url}}" [@posterScale] (click)="gotoDetailPage(vod)">
+        </div>
+      </div>
+    </div>
+    <div class="right-arrow cant-select" (click)="clickRightArrow(i)">R</div>
+  </div>
