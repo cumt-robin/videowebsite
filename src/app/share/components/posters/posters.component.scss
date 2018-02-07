@@ -1,0 +1,80 @@
+.poster-body {
+    position: relative;
+    width: 1448px;
+    margin: auto;
+    margin-top: 40px;
+    &:first-child {
+        margin-top: 0px;
+    }
+    .column-title {
+        position: relative;
+        height: 40px;
+        font-size: 26px;
+        line-height: 40px;
+        margin-bottom: 20px;
+        color: #FCCB35;
+    }
+    .left-arrow {
+        width: 24px;
+        height: 24px;
+        background: red;
+        text-align: center;
+        position: absolute;
+        top: 213px;
+        cursor: pointer;
+    }
+    .right-arrow {
+        width: 24px;
+        height: 24px;
+        background: red;
+        text-align: center;
+        position: absolute;
+        top: 213px;
+        right: 0px;
+        cursor: pointer;
+    }
+    .poster-wrap {
+        width: 1300px;
+        overflow: hidden;
+        position: relative;
+        left: 54px;
+        padding: 30px 18px;
+        .poster-list {
+            width: 6000px;
+            height: 270px;
+            .poster-item {
+                width: 200px;
+                height: 270px;
+                margin-left: 10px;
+                margin-right: 10px;
+                display: inline-block;
+                perspective: 200px;
+                -webkit-perspective: 200px;
+                -moz-perspective: 200px;
+                -ms-perspective: 200px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    // transition: all 0.2s cubic-bezier(.42, 0, .58, 1);
+                    // &:hover {
+                    //     transform: scale3d(1.1,1.1,1);
+                    //     border: 2px solid white;
+                    // }
+                }
+            }
+            .poster-item:first-child {
+                margin-left: 0px;
+            }
+        }
+    }
+}
+ 
+@media screen and(max-width: 1440px) {
+    .poster-body {width: 1048px;}
+    .poster-body .left-arrow {top: 198px;}
+    .poster-body .right-arrow {top: 198px;}
+    .poster-body .poster-wrap {width: 900px;}
+    .poster-body .poster-wrap .poster-list {height: 240px;}
+    .poster-body .poster-wrap .poster-list .poster-item {width: 164px; height: 240px;}
+}

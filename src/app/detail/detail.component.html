@@ -1,3 +1,36 @@
-<p>
-  detail works!
-</p>
+<div class="detail-body">
+    <div class="page-background">
+      <img class="big-img" src="{{backImgUrl}}">
+      <img class="cover-img" src="{{coverImgUrl}}">
+    </div>
+    <div class="hint">{{'is_detail_page' | translate}}</div>
+    <div class="vod-title">{{vodData?.name}}</div>
+    <div class="player-part">
+      <div #videoParent [ngClass]="isFullScreen ? 'video-wrap-fullscreen': 'video-wrap'" [class.fixed-wrap]="isShowMiniVideo && !isFullScreen">
+        <video #video autoplay src="{{vodData?.playUrl}}" (dblclick)="fullScreenControl()"></video>
+        <div class="video-cover" *ngIf="isLoading || isPlayEnd">
+          <div class="loading-icon" *ngIf="isLoading"></div>
+        </div>
+        <div id="close-mini" class="close-video cant-select" (click)="closeMini()" *ngIf="isShowMiniVideo && !isFullScreen">{{'close' | translate}}</div>
+        <div #barWrapRef class="progress-wrap" (mouseleave)="hidePreview()" [ngStyle]="{'visibility':isPlayEnd?'hidden':'visible','display':isShowMiniVideo && !isFullScreen?'none':'block'}">
+          <div class="image-wrap">
+            <div #listRef class="image-list" [ngStyle]="{visibility:showPreviewList?'visible':'hidden'}">
+              <div class="image-item" [ngClass]="{'big-image':i===curIndex}" [ngStyle]="{background: back}" *ngFor="let back of previewBackgrounds;let i = index;" (mouseenter)="enterItem(i)"></div>
+            </div>
+          </div>
+          <input #progressBar class="progress-bar" type="range" value="{{currentTime}}" min="0" max="{{duration}}" step="1" (input)="progressChange($event)" (mouseenter)="showPreview()" (mousemove)="mousemoveSeekbar($event)">
+        </div>
+        <div class="video-control" [style.display]="isShowMiniVideo && !isFullScreen ? 'none' : 'block'">
+          <span class="play-pause cant-select" (click)="playOrPause()">{{playbuttonState | translate}}</span>
+          <span class="video-time">{{currentShowTime}}&nbsp;/&nbsp;{{currentShowDuration}}</span>
+          <span class="control-button cant-select" (click)="fullScreenControl()">{{fullScreenState | translate}}</span>
+          <span class="control-button cant-select" (click)="setMuted()">{{'muted_switch' | translate}}</span>
+          <input #volumeBar class="volume-bar" type="range" min="0" max="100" step="1" (input)="volumeChange($event)" (change)="volumeChange($event)">
+          <span class="set-volume-hint">{{'set_volume' | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <!-- <app-introduce [introduce]="vodData?.introduce"></app-introduce>
+    <app-pictures [stills]="vodData?.stills"></app-pictures> -->
+    <app-posters [columnData]="recmColumns"></app-posters>
+  </div>

@@ -1,0 +1,18 @@
+app-slide, app-posters {
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+}
+app-slide {
+    height: 760px;
+    width: 100%;
+}
+ 
+app-posters {
+    width: 1468px;
+}
+ 
+@media screen and(max-width: 1440px) {
+    app-posters {width: 1068px;}
+}

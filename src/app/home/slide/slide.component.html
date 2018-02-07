@@ -1,0 +1,19 @@
+<div class="slide-body">
+    <div class="nav-cover"></div>
+    <img class="big-poster" src="{{showList[currentItemIndex]?.url}}" (click)="goToVodDetail()">
+    <div class="vod-info">
+        <div class="vod-name">{{showList[currentItemIndex]?.name}}</div>
+        <div class="vod-introduce">{{showList[currentItemIndex]?.introduce}}</div>
+    </div>
+    <div class="slide-part">
+        <div class="top-arrow cant-select" (click)="upArrow()" [style.display]="dataLength > oneGroupNum ? 'block': 'none'">UP</div>
+        <div class="slide-wrap">
+        <div #slideListElement class="slide-list">
+            <div id="slide-{{i}}" [ngClass]="currentItemIndex == i ? 'slide-item select-item' : 'slide-item'" *ngFor="let picture of showList; let i = index;">
+                <img class="small-poster" src="{{picture.url}}" (click)="selectItem(i)">
+            </div>
+        </div>
+        </div>
+        <div class="bottom-arrow cant-select" (click)="downArrow()" [style.display]="dataLength > oneGroupNum ? 'block': 'none'">DOWN</div>
+    </div>
+</div>
