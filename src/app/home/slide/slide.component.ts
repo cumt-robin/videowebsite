@@ -135,7 +135,7 @@ export class SlideComponent implements OnInit, OnDestroy {
     }
 
     goToVodDetail() {
-        this.router.navigate(['ondemand/detail', this.showList[this.currentItemIndex]['id']]);
+        this.router.navigate(['detail/', this.showList[this.currentItemIndex]['id']]);
     }
 
 }

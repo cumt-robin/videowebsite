@@ -8,7 +8,7 @@ import { VideoService } from './video.service';
 import { VideoDragService } from './video-drag.service';
 
 export const ROUTES: Routes = [
-  { path: 'detail:id', component: DetailComponent }
+  { path: 'detail/:id', component: DetailComponent }
 ];
 
 @NgModule({

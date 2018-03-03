@@ -32,7 +32,7 @@ module.exports = webpackMerge(getCommonConfig(option), {
   },
   plugins: [
     new AotPlugin({
-      tsConfigPath: helper.getRoot("tsconfig.aot.json"),
+      tsConfigPath: helper.getRoot("tsconfig-aot.json"),
       entryModule: helper.getRoot('src/app') + '/app.module#AppModule'
     }),
     new UglifyJsPlugin({

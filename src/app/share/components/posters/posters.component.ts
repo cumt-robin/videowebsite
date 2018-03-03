@@ -95,7 +95,7 @@ export class PostersComponent implements OnInit {
 
   gotoDetailPage(vod: VOD) {
     sessionStorage.setItem('VOD_DETAIL_PAGE_BACKGROUND_URL', vod.url);
-    this.router.navigate(['ondemand/detail', vod.id]);
+    this.router.navigate(['detail/', vod.id]);
   }
 
 }
