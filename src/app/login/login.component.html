@@ -1,3 +1,10 @@
-<p>
-  login works!
-</p>
+<div class="login-wrap">
+  <div class="name-wrap">
+    <span class="hint-span">{{'user_name' | translate}}:&nbsp;</span><input class="input" type="text" [(ngModel)]="username">
+  </div>
+  <div class="password-wrap">
+    <span class="hint-span">{{'password' | translate}}:&nbsp;</span><input class="input" type="password" [(ngModel)]="password">
+  </div>
+  <div class="error-info" [ngStyle]="{visibility: showErrorInfo ? 'visible': 'hidden'}">{{'login_error' | translate}}</div>
+  <div class="login-button" (click)="doLogin()">{{'login' | translate}}</div>
+</div>

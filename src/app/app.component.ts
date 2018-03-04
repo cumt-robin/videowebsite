@@ -27,7 +27,8 @@ export class AppComponent implements OnInit {
   public userName = '';
 
   constructor(
-    public translate: TranslateService
+    public translate: TranslateService,
+    private router: Router
   ) {
     this.initTranslation();
     this.checkClientWidth();
@@ -43,9 +44,14 @@ export class AppComponent implements OnInit {
       this.isShowUserInfo = true;
       this.userName = localStorage.getItem('User_Name');
     }
+    EventService.removeAllListeners(['Login_Succeeded']);
     EventService.on('Login_Succeeded', () => {
       this.isShowUserInfo = true;
       this.userName = localStorage.getItem('User_Name');
+    });
+    EventService.removeAllListeners(['Login_Cookie_Expired']);
+    EventService.on('Login_Cookie_Expired', () => {
+      this.router.navigate(['login']);
     });
   }
 

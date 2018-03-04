@@ -21,10 +21,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     this.homeData = getHomeData();
-    EventService.removeAllListeners(['Login_Cookie_Expired']);
-    EventService.on('Login_Cookie_Expired', () => {
-      this.router.navigate(['login']);
-    });
   }
 
   ngOnDestroy() {
