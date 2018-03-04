@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShareModule } from '../share/share.module';
 
 import { DetailComponent } from './detail.component';
+import { IntroduceComponent } from './introduce/introduce.component';
+import { PicturesComponent } from './pictures/pictures.component';
 import { VideoService } from './video.service';
 import { VideoDragService } from './video-drag.service';
 
@@ -17,7 +19,7 @@ export const ROUTES: Routes = [
     RouterModule.forChild(ROUTES),
     ShareModule
   ],
-  declarations: [DetailComponent],
+  declarations: [DetailComponent, IntroduceComponent, PicturesComponent],
   providers: [VideoService, VideoDragService]
 })
 export class DetailModule { }

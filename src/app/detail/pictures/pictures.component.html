@@ -1,0 +1,12 @@
+<div class="pictures-body">
+    <div class="pictures-title">{{'stage_photo' | translate}}</div>
+    <div class="picture-list">
+      <img class="photo-item" src="{{photo}}" *ngFor="let photo of photoList;let i = index;" (click)="showBigPhoto(i)">
+    </div>
+    <div class="big-poster-wrap" [@fadeInOut]="state" (@fadeInOut.done)="fadeInOutDone($event)" [style.display]="isShowBigPhoto ? 'block': 'none'" *ngIf="photoList?.length > 0">
+      <div class="other-part" (click)="hideBigPhoto()"></div>
+      <div class="left-arrow cant-select" (click)="clickLeft()">Left</div>
+      <img class="big-poster" src="{{photoList[curIndex]}}">
+      <div class="right-arrow cant-select" (click)="clickRight()">Right</div>
+    </div>
+</div>
