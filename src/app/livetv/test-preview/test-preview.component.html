@@ -1,0 +1,9 @@
+<h1>{{'test_preview' | translate}}</h1>
+<div class="preview-wrap" (mouseleave)="hidePreview()">
+  <div class="image-wrap">
+    <div #listRef class="image-list" [ngStyle]="{visibility:showPreviewList?'visible':'hidden'}">
+      <div class="image-item" [ngClass]="{'big-image':i===curIndex}" [ngStyle]="{background: back}" *ngFor="let back of backgroundList;let i = index;" (mouseenter)="enterItem(i)"></div>
+    </div>
+  </div>
+  <div #seekBar class="seekbar" (mouseenter)="showPreview()" (mousemove)="mousemoveSeekbar($event)"></div>
+</div>

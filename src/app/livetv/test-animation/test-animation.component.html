@@ -1,0 +1,9 @@
+<h1 class="test-anim" [@testAnim]="state">{{'test_animation' | translate}}</h1>
+<button (click)="setState('fadeInEnd')">fadeIn</button>
+<button (click)="setState('fadeOutEnd')">fadeOut</button>
+<button (click)="setState('shrinkEnd')">shrink</button>
+<button (click)="setState('stretchEnd')">stretch</button>
+<button (click)="setState('flyInEnd')">flyIn</button>
+<button (click)="setState('flyOutEnd')">flyOut</button>
+<button (click)="setState('zoomInEnd')">zoomIn</button>
+<button (click)="setState('zoomOutEnd')">zoomOut</button>

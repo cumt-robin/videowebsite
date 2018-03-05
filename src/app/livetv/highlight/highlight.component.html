@@ -1,0 +1,5 @@
+<h1>{{'test_match' | translate}}</h1>
+<p appInnerHTML="{{innerHTML}}"></p>
+<div class="hint">{{'input_keyword_to_query' | translate}}</div>
+<span class="keyword">{{'keyword' | translate}}:&nbsp;</span>
+<input type="text" [(ngModel)]="keyword" (keydown)="inputKeydown($event)" (keyup)="inputKeyup($event)">
