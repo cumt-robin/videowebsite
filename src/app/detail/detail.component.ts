@@ -58,12 +58,15 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       this.resetProperties();
+      this.videoService.destroyVideoElement();
       getVODDetail({id: this.vodID}).then(resp => {
         this.vodData = resp['vod'];
         this.recmColumns = resp['recomendColumns'];
         this.previewList = this.vodData['previews'];
         this.calculateListWidth();
         this.getPreviewBackgrounds();
+        this.videoService.initVideoElement(this.video.nativeElement, this.videoParent.nativeElement, this.vodData.playUrl);
+        this.videoDragService.initDraggingObj(this.videoParent.nativeElement);
       });
       EventService.removeAllListeners(['SCREEN_SIZE_CHANGE']);
       EventService.on('SCREEN_SIZE_CHANGE', (e) => {
@@ -121,9 +124,6 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
       EventService.on('SPACE_KEY_EVENT', () => {
         this.spaceControlPlay();
       });
-      this.videoService.destroyVideoElement();
-      this.videoService.initVideoElement(this.video.nativeElement, this.videoParent.nativeElement);
-      this.videoDragService.initDraggingObj(this.videoParent.nativeElement);
     });
   }
 

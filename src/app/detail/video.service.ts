@@ -9,9 +9,9 @@ export class VideoService {
     private videoState = '';
     private parentElement: HTMLElement = null;
 
-    initVideoElement(videoRef: HTMLElement, parentRef: HTMLElement) {
+    initVideoElement(videoRef: HTMLElement, parentRef: HTMLElement, playUrl: string) {
         this.video = videoRef;
-        this.video['src'] = 'assets/videodemo/mov_bbb.mp4';
+        this.video['src'] = playUrl;
         this.parentElement = parentRef;
         console.log('video initialize');
         console.log(this.video);
