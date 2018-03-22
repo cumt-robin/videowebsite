@@ -5,9 +5,10 @@ import { ShareModule } from '../share/share.module';
 
 import { HomeComponent } from './home.component';
 import { SlideComponent } from './slide/slide.component';
+import { AppCanActivate } from '../share/services/login.canactivate.service';
 
 export const ROUTES: Routes = [
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent, canActivate: [AppCanActivate] }
 ];
 
 @NgModule({

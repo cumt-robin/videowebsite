@@ -4,7 +4,7 @@
     <div class="poster-wrap">
       <div #posterListsRef class="poster-list">
         <div class="poster-item" *ngFor="let vod of column.vods; let j = index;">
-          <img #imgItem focus src="{{vod.url}}" [@posterScale] (click)="gotoDetailPage(vod)">
+          <img #imgItem appFocus src="{{vod.url}}" [@posterScale] (click)="gotoDetailPage(vod)">
         </div>
       </div>
     </div>

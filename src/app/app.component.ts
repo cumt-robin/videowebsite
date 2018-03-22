@@ -163,8 +163,8 @@ export class AppComponent implements OnInit {
       // 每次定时器时间，都向上滚动当前值的10%
       let scrollGap = Math.ceil(this.curScrollTop / 10);
       if (this.curScrollTop - scrollGap > 0) {
-        // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。
-        if (this.targetScrollTop < this.curScrollTop) {
+        // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。这里做一个100的差值，是为了防止一些页面变化的微抖动产生影响。
+        if (this.targetScrollTop < this.curScrollTop - 100) {
           clearInterval(this.gotoTopTimer);
           return;
         }
@@ -177,7 +177,7 @@ export class AppComponent implements OnInit {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
       }
-    }, 30);
+    }, 20);
   }
 
 }

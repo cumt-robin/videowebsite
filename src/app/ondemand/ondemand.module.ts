@@ -5,8 +5,10 @@ import { ShareModule } from '../share/share.module';
 
 import { OndemandComponent } from './ondemand.component';
 
+import { AppCanActivate } from '../share/services/login.canactivate.service';
+
 export const ROUTES: Routes = [
-  { path: 'ondemand', component: OndemandComponent }
+  { path: 'ondemand', component: OndemandComponent, canActivate: [AppCanActivate] }
 ];
 
 @NgModule({

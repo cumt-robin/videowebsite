@@ -13,8 +13,10 @@ import { TestPipeComponent } from './test-pipe/test-pipe.component';
 import { TestHostComponent } from './test-host/test-host.component';
 import { ToggleClassDirective } from './test-host/test-host.component';
 
+import { AppCanActivate } from '../share/services/login.canactivate.service';
+
 export const ROUTES: Routes = [
-  { path: 'livetv', component: LivetvComponent }
+  { path: 'livetv', component: LivetvComponent, canActivate: [AppCanActivate] }
 ];
 
 @NgModule({
