@@ -3,44 +3,44 @@
     display: inline-block;
     .content-box {
         position: relative;
-        width: rem(600);
-        height: rem(400);
+        width: 600px;
+        height: 400px;
         overflow: hidden;
         display: inline-block;
         background: rgba(0,0,0,0.2);
         .content {
             position: relative;
             width: 300%;
-            top: rem(0);
+            top: 0px;
         }
     }
     .scroll-box {
         position: relative;
-        width: rem(12);
-        height: rem(400);
+        width: 12px;
+        height: 400px;
         background: rgba(0,0,0,0.5);
         display: inline-block;
         .scroll-bar {
             position: relative;
-            width: rem(6);
-            top: rem(0);
-            left: rem(3);
+            width: 6px;
+            top: 0px;
+            left: 3px;
             background: rgba(245,245,245,0.5);
-            border-radius: rem(4);
+            border-radius: 4px;
             cursor: pointer;
         }
     }
     .h-scroll-box {
         background: rgba(0,0,0,0.5);
-        height: rem(12);
+        height: 12px;
         .h-scroll-bar {
             position: relative;
-            width: rem(0);
-            height: rem(6);
-            top: rem(3);
-            left: rem(0);
+            width: 0px;
+            height: 6px;
+            top: 3px;
+            left: 0px;
             background: rgba(245,245,245,0.5);
-            border-radius: rem(4);
+            border-radius: 4px;
             cursor: pointer;
         }
     }

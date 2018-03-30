@@ -29,9 +29,9 @@ a {
 // css for AppComponent
 
 header {
-    height: rem(80);
+    height: 80px;
     width: 100%;
-    min-width: rem(1500);
+    min-width: 1500px;
     position: fixed;
     top: 0;
     z-index: 10;
@@ -45,17 +45,17 @@ header {
 }
 nav {
     position: relative;
-    top: rem(30);
-    width: rem(1380);
+    top: 30px;
+    width: 1380px;
     margin: auto;
 }
 .head-href {
-    margin-left: rem(40);
+    margin-left: 40px;
     cursor: pointer;
     text-decoration: none;
     color: lightblue;
     transition: background 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95), border-radius 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    padding: rem(0 5);
+    padding: 0 5px;
     display: inline-block;
     text-align: center;
     &:first-child {
@@ -64,7 +64,7 @@ nav {
     &:hover {
         color: white;
         background: #2098D1;
-        border-radius: rem(4);
+        border-radius: 4px;
     }
 }
 .href-active {
@@ -76,31 +76,31 @@ nav {
 .language-wrap {
     position: relative;
     float: right;
-    top: rem(0);
-    width: rem(80);
+    top: 0px;
+    width: 80px;
     text-align: center;
     .lang-set {
         color: lightblue;
         width: 100%;
         transition: background 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95), border-radius 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         .bottom-triangle {
-            width: rem(0);
-            height: rem(0);
-            border: rem(10) solid;
+            width: 0px;
+            height: 0px;
+            border: 10px solid;
             position: absolute;
-            left: rem(30);
+            left: 30px;
             border-color: transparent;
             transition: border-color 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         }
     }
     .lang-ul {
-        margin: rem(10) 0 0 0;
+        margin: 10px 0 0 0;
         padding: 0;
         background: rgba(31, 31, 31, 0.95);
-        border-radius: rem(3);
+        border-radius: 3px;
         .lang-li {
             list-style: none;
-            padding-bottom: rem(5);
+            padding-bottom: 5px;
             cursor: pointer;
         }
     }
@@ -108,7 +108,7 @@ nav {
         .lang-set {
             color: white;
             background: #2098D1;
-            border-radius: rem(4);
+            border-radius: 4px;
             .bottom-triangle {
                 border-color: #2098D1 transparent transparent transparent;
             }
@@ -117,7 +117,7 @@ nav {
 }
 .user-nav {
     float: right;
-    margin-right: rem(40);
+    margin-right: 40px;
     .name {
         color: #9fa7a9;
         cursor: pointer;
@@ -128,41 +128,41 @@ nav {
 }
 main {
     overflow: hidden;
-    min-height: rem(1100);
-    min-width: rem(1500);
+    min-height: 1100px;
+    min-width: 1500px;
     .goto-top {
         position: fixed;
         z-index: 20;
-        width: rem(80);
-        height: rem(80);
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         left: 50%;
         transform: translateX(-50%);
-        bottom: rem(80);
+        bottom: 80px;
         background: rgba(245, 245, 245, 0.6);
         text-align: center;
-        font-size: rem(32);
-        line-height: rem(80);
+        font-size: 32px;
+        line-height: 80px;
         color: lightblue;
         cursor: pointer;
     }
 }
 footer {
     position: relative;
-    height: rem(80);
-    min-width: rem(1500);
+    height: 80px;
+    min-width: 1500px;
     background: #020202;
     .foot-info {
-        width: rem(1380);
+        width: 1380px;
         margin: auto;
         text-align: right;
         color: white;
-        line-height: rem(80);
+        line-height: 80px;
     }
 }
  
-@media screen and(max-width: rem(1440)) {
-    header,main,footer {min-width: rem(1100);}
-    nav {width: rem(980);}
-    footer .foot-info {width: rem(980);}
+@media screen and(max-width: 1440px) {
+    header,main,footer {min-width: 1100px;}
+    nav {width: 980px;}
+    footer .foot-info {width: 980px;}
 }

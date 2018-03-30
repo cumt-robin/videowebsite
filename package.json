@@ -31,9 +31,13 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/platform-server": "^4.4.4",
     "@angular/router": "^4.2.4",
+    "@types/jquery": "^3.3.1",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "eventemitter2": "^5.0.1",
+    "jquery": "^3.3.1",
     "ng2-translate": "^5.0.0",
+    "popper.js": "^1.14.1",
     "rxjs": "^5.5.2",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.14"

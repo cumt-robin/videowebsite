@@ -19,23 +19,23 @@
     }
     .vod-info {
         position: absolute;
-        bottom: rem(200);
-        left: rem(100);
-        width: rem(800);
-        height: rem(160);
+        bottom: 200px;
+        left: 100px;
+        width: 800px;
+        height: 160px;
         .vod-name {
             position: relative;
-            font-size: rem(32);
+            font-size: 32px;
             font-weight: bold;
-            height: rem(40);
-            line-height: rem(40);
+            height: 40px;
+            line-height: 40px;
         }
         .vod-introduce {
             position: relative;
-            margin-top: rem(20);
-            font-size: rem(16);
+            margin-top: 20px;
+            font-size: 16px;
             width: 100%;
-            line-height: rem(24);
+            line-height: 24px;
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-line-clamp: 4;
@@ -46,23 +46,23 @@
     }
     .slide-part {
         position: absolute;
-        top: rem(126);
-        right: rem(150);
+        top: 126px;
+        right: 150px;
         background: rgba(0, 0, 0, 0.4);
-        padding: rem(20);
+        padding: 20px;
         z-index: 2;
         .slide-wrap {
             position: relative;
-            height: rem(380);
+            height: 380px;
             overflow: hidden;
-            margin: rem(20) 0;
+            margin: 20px 0;
             .slide-list {
                 position: relative;
-                width: rem(150);
+                width: 150px;
                 .slide-item {
-                    width: rem(150);
-                    height: rem(80);
-                    margin-bottom: rem(20);
+                    width: 150px;
+                    height: 80px;
+                    margin-bottom: 20px;
                     .small-poster {
                         width: 100%;
                         height: 100%;
@@ -70,20 +70,20 @@
                     }
                 }
                 .slide-item:last-child {
-                    margin-bottom: rem(0);
+                    margin-bottom: 0px;
                 }
                 .select-item {
-                    width: rem(146);
-                    height: rem(76);
-                    border: rem(2) solid #FCCB35;
+                    width: 146px;
+                    height: 76px;
+                    border: 2px solid #FCCB35;
                 }
             }
         }
         .top-arrow {
             position: relative;
-            width: rem(56);
-            height: rem(24);
-            left: rem(47);
+            width: 56px;
+            height: 24px;
+            left: 47px;
             color: white;
             background: red;
             text-align: center;
@@ -91,9 +91,9 @@
         }
         .bottom-arrow {
             position: relative;
-            width: rem(56);
-            height: rem(24);
-            left: rem(47);
+            width: 56px;
+            height: 24px;
+            left: 47px;
             color: white;
             background: red;
             text-align: center;
@@ -102,7 +102,7 @@
     }
 }
  
-@media screen and(max-width: rem(1440)) {
-    .slide-body .vod-info {width: rem(600); bottom: rem(150);}
-    .slide-body .slide-part {top: rem(86);}
+@media screen and(max-width: 1440px) {
+    .slide-body .vod-info {width: 600px; bottom: 150px;}
+    .slide-body .slide-part {top: 86px;}
 }

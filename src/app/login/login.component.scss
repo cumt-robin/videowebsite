@@ -1,37 +1,37 @@
 @import 'src/app/share/css/_loader.scss';
 .login-wrap {
-    top: rem(180);
+    top: 180px;
     position: relative;
     display: block;
-    width: rem(400);
+    width: 400px;
     margin: auto;
     .name-wrap {
-        height: rem(30);
-        line-height: rem(30);
+        height: 30px;
+        line-height: 30px;
     }
     .password-wrap {
-        margin-top: rem(30);
-        height: rem(30);
-        line-height: rem(30);
+        margin-top: 30px;
+        height: 30px;
+        line-height: 30px;
     }
     .login-button {
-        margin-top: rem(30);
+        margin-top: 30px;
         background: lightskyblue;
-        width: rem(80);
+        width: 80px;
         text-align: center;
-        border-radius: rem(4);
+        border-radius: 4px;
         cursor: pointer;
     }
     .error-info {
         color: red;
-        font-size: rem(14);
-        margin-top: rem(10);
+        font-size: 14px;
+        margin-top: 10px;
     }
 }
  
 .hint-span {
     float: left;
-    margin-right: rem(10);
+    margin-right: 10px;
 }
 .input {
     color: black;

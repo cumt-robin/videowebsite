@@ -105,7 +105,7 @@ const getCommonConfig = function(option) {
         },
         {
           "include": [
-            helper.getRoot("src/styles.scss")
+            helper.getRoot("src/styles.css")
           ],
           "test": /\.css$/,
           "use": [
@@ -128,7 +128,7 @@ const getCommonConfig = function(option) {
         },
         {
           "include": [
-            helper.getRoot("src/styles.scss")
+            helper.getRoot("src/styles.css")
           ],
           "test": /\.scss$|\.sass$/,
           "use": [

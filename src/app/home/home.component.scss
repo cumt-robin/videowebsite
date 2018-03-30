@@ -2,19 +2,19 @@
 app-slide, app-posters {
     display: block;
     margin: auto;
-    margin-bottom: rem(40);
+    margin-bottom: 40px;
     position: relative;
 }
 app-slide {
-    height: rem(760);
+    height: 760px;
     width: 100%;
 }
  
 app-posters {
-    width: rem(1468);
+    width: 1468px;
 }
  
-@media screen and(max-width: rem(1440)) {
-    app-posters {width: rem(1068);}
-    app-slide {height: rem(600);}
+@media screen and(max-width: 1440px) {
+    app-posters {width: 1068px;}
+    app-slide {height: 600px;}
 }

@@ -48,7 +48,7 @@ export class PostersComponent implements OnInit {
     if (document.body.clientWidth < 1440) {
       this.isBigScreen = false;
       this.onePageItems = 5;
-      this.onePageWidth = 920;
+      this.onePageWidth = 900;
     } else {
       this.isBigScreen = true;
       this.onePageItems = 6;

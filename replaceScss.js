@@ -12,7 +12,7 @@ function readDir(path) {
                 if (info.isDirectory()) {
                     readDir(path+"/" + ele);
                 } else if (info.isFile()) {
-                    if (getFileType(ele) === 'scss' && path.indexOf('/share') === -1) {
+                    if (getFileType(ele) === 'scss' && path.indexOf('/share/css') === -1) {
                         console.log("file: " + ele);
                         fs.readFile(path+"/" + ele, function(err, data){
                             if(err){
@@ -45,7 +45,7 @@ function replaceContent(content) {
     if (!/_loader.scss/g.test(content)) {
         content = '@import \'src/app/share/css/_loader.scss\';\n' + content;
     }
-    content = pxToRem(content);
+    content = remToPx(content);
     return content;
 }
  

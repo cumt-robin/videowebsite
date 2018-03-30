@@ -1,3 +1,4 @@
+@import 'src/app/share/css/_loader.scss';
 .poster-body {
     position: relative;
     width: 1448px;
@@ -38,7 +39,7 @@
         overflow: hidden;
         position: relative;
         left: 54px;
-        padding: 30px 18px;
+        padding: 30px 20px;
         .poster-list {
             width: 6000px;
             height: 270px;
@@ -74,7 +75,7 @@
     .poster-body {width: 1048px;}
     .poster-body .left-arrow {top: 198px;}
     .poster-body .right-arrow {top: 198px;}
-    .poster-body .poster-wrap {width: 900px;}
+    .poster-body .poster-wrap {width: 880px; left: 64px;}
     .poster-body .poster-wrap .poster-list {height: 240px;}
-    .poster-body .poster-wrap .poster-list .poster-item {width: 164px; height: 240px;}
+    .poster-body .poster-wrap .poster-list .poster-item {width: 160px; height: 240px;}
 }

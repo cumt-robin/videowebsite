@@ -3,6 +3,7 @@ import { TranslateService } from 'ng2-translate';
 import { Router } from '@angular/router';
 import { EventService } from './share/services/event.service';
 import { UtilService } from './share/services/utils.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    window.onscroll = this.scrollListener.bind(this);
+    console.log($('body'));
+    document.onscroll = this.scrollListener.bind(this);
     document.onkeydown = this.keydownListener.bind(this);
     window.onresize = this.resizeListener.bind(this);
     let isProfileLogin = localStorage.getItem('isProfileLogin');
@@ -57,7 +59,6 @@ export class AppComponent implements OnInit {
 
   scrollListener(e: Object) {
     clearTimeout(this.goTopDisappearTimer);
-    EventService.emit('SCROLL_EVENT', 666);
     this.curScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     if (this.curScrollTop > 0) {
       this.isTop = false;
@@ -160,11 +161,13 @@ export class AppComponent implements OnInit {
   gotoTop() {
     this.targetScrollTop = this.curScrollTop;
     this.gotoTopTimer = setInterval(() => {
+      console.log(this);
       // 每次定时器时间，都向上滚动当前值的10%
       let scrollGap = Math.ceil(this.curScrollTop / 10);
       if (this.curScrollTop - scrollGap > 0) {
-        // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。这里做一个100的差值，是为了防止一些页面变化的微抖动产生影响。
-        if (this.targetScrollTop < this.curScrollTop - 100) {
+        // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。这里做一个200的差值，是为了防止一些页面变化的微抖动产生影响。
+        if (this.targetScrollTop < this.curScrollTop - 200) {
+          console.log(this.targetScrollTop, this.curScrollTop);
           clearInterval(this.gotoTopTimer);
           return;
         }

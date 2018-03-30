@@ -1,11 +1,11 @@
 @import 'src/app/share/css/_loader.scss';
 p {
     color: white;
-    width: rem(1380);
+    width: 1380px;
     margin: auto;
-    text-indent: rem(16);
+    text-indent: 16px;
 }
  
-@media screen and(max-width:rem(1440)) {
-    p {width: rem(980);}
+@media screen and(max-width:1440px) {
+    p {width: 980px;}
 }
