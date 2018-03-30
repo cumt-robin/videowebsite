@@ -1,0 +1,5 @@
+@import './_variable.scss';
+
+@function rem($pixels: 16){
+    @return $pixels / $font_size + rem;
+}
