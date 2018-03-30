@@ -1,9 +1,10 @@
+@import 'src/app/share/css/_loader.scss';
 .detail-body {
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 80px;
-    padding-bottom: 80px;
+    margin-top: rem(80);
+    padding-bottom: rem(80);
     .page-background {
         position: fixed;
         width: 100%;
@@ -29,25 +30,25 @@
     }
     .hint {
         color: white;
-        font-size: 20px;
+        font-size: rem(20);
         text-align: center;
-        height: 40px;
-        line-height: 40px;
+        height: rem(40);
+        line-height: rem(40);
         position: relative;
     }
     .vod-title {
         position: relative;
-        width: 1380px;
+        width: rem(1380);
         margin: auto;
-        font-size: 24px;
-        height: 40px;
-        line-height: 40px;
+        font-size: rem(24);
+        height: rem(40);
+        line-height: rem(40);
     }
     .player-part {
         position: relative;
-        width: 1200px;
-        height: 675px;
-        margin: 40px auto 0;
+        width: rem(1200);
+        height: rem(675);
+        margin: rem(40) auto 0;
         .video-wrap {
             position: relative;
             width: 100%;
@@ -68,7 +69,7 @@
                 left: 0;
                 .loading-icon {
                     position: relative;
-                    width: 80px;
+                    width: rem(80);
                     height: 100%;
                     margin: 0 auto;
                     animation: myRotate 2s ease-out infinite;
@@ -80,7 +81,7 @@
             .video-control {
                 position: absolute;
                 width: 100%;
-                height: 30px;
+                height: rem(30);
                 bottom: 0;
                 background: rgba(0, 0, 0, 0.7);
                 .play-pause {
@@ -88,7 +89,7 @@
                     background: black;
                     float: left;
                     text-align: center;
-                    margin-right: 20px;
+                    margin-right: rem(20);
                 }
                 .video-time {
                     cursor: pointer;
@@ -99,11 +100,11 @@
                     cursor: pointer;
                     background: black;
                     float: right;
-                    margin-left: 20px;
+                    margin-left: rem(20);
                 }
                 .volume-bar {
                     float: right;
-                    margin-left: 5px;
+                    margin-left: rem(5);
                     width: auto;
                 }
                 .set-volume-hint {
@@ -126,7 +127,7 @@
                 left: 0;
                 .loading-icon {
                     position: relative;
-                    width: 80px;
+                    width: rem(80);
                     height: 100%;
                     margin: 0 auto;
                     animation: myRotate 2s ease-out infinite;
@@ -145,7 +146,7 @@
             .video-control {
                 position: absolute;
                 width: 100%;
-                height: 30px;
+                height: rem(30);
                 left: 0;
                 bottom: 0;
                 background: rgba(0, 0, 0, 0.7);
@@ -154,7 +155,7 @@
                     background: black;
                     float: left;
                     text-align: center;
-                    margin-right: 20px;
+                    margin-right: rem(20);
                 }
                 .video-time {
                     cursor: pointer;
@@ -165,11 +166,11 @@
                     cursor: pointer;
                     background: black;
                     float: right;
-                    margin-left: 20px;
+                    margin-left: rem(20);
                 }
                 .volume-bar {
                     float: right;
-                    margin-left: 5px;
+                    margin-left: rem(5);
                     width: auto;
                 }
                 .set-volume-hint {
@@ -179,19 +180,19 @@
         }
         .fixed-wrap {
             position: fixed;
-            bottom: 0px;
-            right: 160px;
+            bottom: rem(0);
+            right: rem(160);
             z-index: 5;
-            width: 458px;
-            height: 258px;
+            width: rem(458);
+            height: rem(258);
             margin: 0;
             background: #141414;
-            border: 1px solid white;
+            border: rem(1) solid white;
             .close-video {
                 position: absolute;
-                right: 10px;
-                top: 10px;
-                font-size: 16px;
+                right: rem(10);
+                top: rem(10);
+                font-size: rem(16);
                 background: #141414;
                 cursor: pointer;
             }
@@ -199,33 +200,33 @@
         .progress-wrap {
             position: relative;
             width: 100%;
-            bottom: 175px;
+            bottom: rem(175);
             .image-wrap {
                 width: 100%;
-                height: 120px;
+                height: rem(120);
                 overflow: hidden;
                 position: relative;
                 .image-list {
                     position: relative;
                     height: 100%;
-                    left: 0px;
-                    bottom: 0px;
+                    left: rem(0);
+                    bottom: rem(0);
                     .image-item {
-                        width: 160px;
-                        height: 100px;
+                        width: rem(160);
+                        height: rem(100);
                         display: inline-block;
-                        margin-right: 2px;
-                        bottom: 0px;
+                        margin-right: rem(2);
+                        bottom: rem(0);
                         position: relative;
                         cursor: pointer;
                         &:last-child {
-                            margin-right: 0px;
+                            margin-right: rem(0);
                         }
                     }
                     .big-image {
-                        width: 196px;
-                        height: 116px;
-                        border: 2px solid white;
+                        width: rem(196);
+                        height: rem(116);
+                        border: rem(2) solid white;
                         cursor: pointer;
                     }
                 }
@@ -239,15 +240,15 @@
     }
     app-introduce {
         display: block;
-        margin-top: 40px;
+        margin-top: rem(40);
     }
     app-pictures {
         display: block;
-        margin-top: 40px;
+        margin-top: rem(40);
     }
     app-posters {
         display: block;
-        margin-top: 40px;
+        margin-top: rem(40);
     }
 }
  
@@ -267,8 +268,8 @@
     to {-moz-transform: rotate(360deg)}
 }
  
-@media screen and(max-width:1440px) {
-    .detail-body .vod-title {width: 980px;}
-    .detail-body .player-part {width: 800px; height: 450px;}
-    .detail-body .player-part .fixed-wrap {position: fixed; bottom: 0px; right: 160px; z-index: 5; width: 458px; height: 258px; margin: 0; background: #141414; border: 1px solid white;}
+@media screen and(max-width:rem(1440)) {
+    .detail-body .vod-title {width: rem(980);}
+    .detail-body .player-part {width: rem(800); height: rem(450);}
+    .detail-body .player-part .fixed-wrap {position: fixed; bottom: rem(0); right: rem(160); z-index: 5; width: rem(458); height: rem(258); margin: 0; background: #141414; border: rem(1) solid white;}
 }

@@ -1,45 +1,46 @@
+@import 'src/app/share/css/_loader.scss';
 .scroll-wrap {
     display: inline-block;
     .content-box {
         position: relative;
-        width: 600px;
-        height: 400px;
+        width: rem(600);
+        height: rem(400);
         overflow: hidden;
         display: inline-block;
         background: rgba(0,0,0,0.2);
         .content {
             position: relative;
             width: 300%;
-            top: 0px;
+            top: rem(0);
         }
     }
     .scroll-box {
         position: relative;
-        width: 12px;
-        height: 400px;
+        width: rem(12);
+        height: rem(400);
         background: rgba(0,0,0,0.5);
         display: inline-block;
         .scroll-bar {
             position: relative;
-            width: 6px;
-            top: 0px;
-            left: 3px;
+            width: rem(6);
+            top: rem(0);
+            left: rem(3);
             background: rgba(245,245,245,0.5);
-            border-radius: 4px;
+            border-radius: rem(4);
             cursor: pointer;
         }
     }
     .h-scroll-box {
         background: rgba(0,0,0,0.5);
-        height: 12px;
+        height: rem(12);
         .h-scroll-bar {
             position: relative;
-            width: 0px;
-            height: 6px;
-            top: 3px;
-            left: 0px;
+            width: rem(0);
+            height: rem(6);
+            top: rem(3);
+            left: rem(0);
             background: rgba(245,245,245,0.5);
-            border-radius: 4px;
+            border-radius: rem(4);
             cursor: pointer;
         }
     }

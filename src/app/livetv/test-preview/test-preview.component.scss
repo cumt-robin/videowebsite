@@ -1,39 +1,40 @@
+@import 'src/app/share/css/_loader.scss';
 .preview-wrap {
     position: relative;
-    width: 1100px;
+    width: rem(1100);
     .image-wrap {
         width: 100%;
-        height: 120px;
+        height: rem(120);
         overflow: hidden;
         position: relative;
         .image-list {
             position: relative;
             height: 100%;
-            left: 0px;
-            bottom: 0px;
+            left: rem(0);
+            bottom: rem(0);
             .image-item {
-                width: 160px;
-                height: 100px;
+                width: rem(160);
+                height: rem(100);
                 display: inline-block;
-                margin-right: 2px;
-                bottom: 0px;
+                margin-right: rem(2);
+                bottom: rem(0);
                 position: relative;
                 &:last-child {
-                    margin-right: 0px;
+                    margin-right: rem(0);
                 }
             }
             .big-image {
-                width: 196px;
-                height: 116px;
-                border: 2px solid white;
+                width: rem(196);
+                height: rem(116);
+                border: rem(2) solid white;
             }
         }
     }
     .seekbar {
         width: 100%;
-        height: 6px;
+        height: rem(6);
         background: #FCCB35;
         cursor: pointer;
-        margin-top: 5px;
+        margin-top: rem(5);
     }
 }

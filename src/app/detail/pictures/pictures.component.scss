@@ -1,27 +1,28 @@
+@import 'src/app/share/css/_loader.scss';
 .pictures-body {
     position: relative;
-    width: 1380px;
+    width: rem(1380);
     margin: auto;
     .pictures-title {
-        font-size: 24px;
-        margin-bottom: 30px;
+        font-size: rem(24);
+        margin-bottom: rem(30);
         color: #FCCB35;
     }
     .picture-list {
         position: relative;
-        width: 1280px;
+        width: rem(1280);
         margin: auto;
         .photo-item {
-            width: 240px;
-            height: 200px;
-            margin-right: 20px;
+            width: rem(240);
+            height: rem(200);
+            margin-right: rem(20);
             cursor: pointer;
             transition: all 0.2s cubic-bezier(.42, 0, .58, 1);
             &:last-child {
                 margin-right: 0;
             }
             &:hover{
-                box-shadow: 0 0 10px lightblue;
+                box-shadow: 0 0 rem(10) lightblue;
                 transform: scale3d(1.1,1.1,1);
             }
         }
@@ -35,33 +36,33 @@
         background: rgba(0, 0, 0, 0.7);
         z-index: 15;
         .big-poster {
-            top: calc((100% - 500px) / 2);
-            left: calc((100% - 1000px) / 2);
+            top: calc((100% - rem(500)) / 2);
+            left: calc((100% - rem(1000)) / 2);
             position: relative;
-            width: 1000px;
-            height: 500px;
-            filter: drop-shadow(4px 4px 5px red) drop-shadow(-4px -4px 5px red);
+            width: rem(1000);
+            height: rem(500);
+            filter: drop-shadow(4px rem(4) rem(5) red) drop-shadow(-4px rem(-4) rem(5) red);
         }
         .left-arrow {
-            width: 60px;
-            height: 30px;
+            width: rem(60);
+            height: rem(30);
             position: absolute;
             background: red;
             text-align: center;
-            font-size: 20px;
-            top: calc((100% - 60px) / 2);
-            left: calc((100% - 1000px) / 2 - 100px);
+            font-size: rem(20);
+            top: calc((100% - rem(60)) / 2);
+            left: calc((100% - rem(1000)) / 2 - rem(100));
             cursor: pointer;
         }
         .right-arrow {
-            width: 60px;
-            height: 30px;
+            width: rem(60);
+            height: rem(30);
             position: absolute;
             background: red;
             text-align: center;
-            font-size: 20px;
-            top: calc((100% - 60px) / 2);
-            left: calc((100% - 1000px) / 2 + 1040px);
+            font-size: rem(20);
+            top: calc((100% - rem(60)) / 2);
+            left: calc((100% - rem(1000)) / 2 + rem(1040));
             cursor: pointer;
         }
         .other-part {
@@ -72,8 +73,8 @@
     }
 }
  
-@media screen and(max-width:1440px) {
-    .pictures-body {width: 980px;}
-    .pictures-body .picture-list {width: 880px;}
-    .pictures-body .picture-list .photo-item {width: 160px; height: 150px;}
+@media screen and(max-width:rem(1440)) {
+    .pictures-body {width: rem(980);}
+    .pictures-body .picture-list {width: rem(880);}
+    .pictures-body .picture-list .photo-item {width: rem(160); height: rem(150);}
 }

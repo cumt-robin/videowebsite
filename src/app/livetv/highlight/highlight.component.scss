@@ -1,11 +1,12 @@
+@import 'src/app/share/css/_loader.scss';
 p, span {
     color: white;
-    text-indent: 16px;
+    text-indent: rem(16);
 }
 input {
     color: black;
 }
 .hint {
     color: #FCCB35;
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
 }

@@ -1,19 +1,20 @@
+@import 'src/app/share/css/_loader.scss';
 app-slide, app-posters {
     display: block;
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: rem(40);
     position: relative;
 }
 app-slide {
-    height: 760px;
+    height: rem(760);
     width: 100%;
 }
  
 app-posters {
-    width: 1468px;
+    width: rem(1468);
 }
  
-@media screen and(max-width: 1440px) {
-    app-posters {width: 1068px;}
-    app-slide {height: 600px;}
+@media screen and(max-width: rem(1440)) {
+    app-posters {width: rem(1068);}
+    app-slide {height: rem(600);}
 }

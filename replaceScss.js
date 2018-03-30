@@ -1,6 +1,6 @@
 var fs = require("fs");
  
-readDir(__dirname + '/src/app/home');
+readDir(__dirname + '/src/app');
  
 function readDir(path) {  
     fs.readdir(path,function(err, dirContent) {
@@ -11,8 +11,8 @@ function readDir(path) {
             fs.stat(path+"/"+ele, function(err, info){
                 if (info.isDirectory()) {
                     readDir(path+"/" + ele);
-                } else if (info.isFile()) {  
-                    if (getFileType(ele) === 'scss') {
+                } else if (info.isFile()) {
+                    if (getFileType(ele) === 'scss' && path.indexOf('/share') === -1) {
                         console.log("file: " + ele);
                         fs.readFile(path+"/" + ele, function(err, data){
                             if(err){
@@ -42,6 +42,9 @@ function getFileType(fileName) {
 }
  
 function replaceContent(content) {
+    if (!/_loader.scss/g.test(content)) {
+        content = '@import \'src/app/share/css/_loader.scss\';\n' + content;
+    }
     content = pxToRem(content);
     return content;
 }

@@ -1,33 +1,34 @@
+@import 'src/app/share/css/_loader.scss';
 app-test-animation, app-test-scroll, app-test-preview, app-highlight, app-test-directive, app-test-pipe, app-test-host {
     position: relative;
     margin: auto;
     display: block;
 }
 app-test-animation {
-    margin-top: 80px;
-    width: 1380px;
+    margin-top: rem(80);
+    width: rem(1380);
 }
 app-test-scroll {
-    margin-top: 40px;
-    width: 1380px;
+    margin-top: rem(40);
+    width: rem(1380);
 }
 app-test-preview {
-    margin-top: 40px;
-    width: 1380px;
+    margin-top: rem(40);
+    width: rem(1380);
 }
 app-highlight {
-    margin-top: 40px;
-    width: 1380px;
+    margin-top: rem(40);
+    width: rem(1380);
 }
 app-test-directive {
-    margin-top: 40px;
-    width: 1380px;
+    margin-top: rem(40);
+    width: rem(1380);
 }
 app-test-pipe {
-    margin-top: 40px;
-    width: 1380px;
+    margin-top: rem(40);
+    width: rem(1380);
 }
 app-test-host {
-    margin-top: 40px;
-    width: 1380px;
+    margin-top: rem(40);
+    width: rem(1380);
 }
