@@ -6,7 +6,7 @@
         <div class="vod-introduce">{{showList[currentItemIndex]?.introduce}}</div>
     </div>
     <div class="slide-part">
-        <div class="top-arrow cant-select" (click)="upArrow()" [style.display]="dataLength > oneGroupNum ? 'block': 'none'">UP</div>
+        <i class="anticon anticon-up top-arrow" (click)="upArrow()" [style.display]="dataLength > oneGroupNum ? 'block': 'none'"></i>
         <div class="slide-wrap">
         <div #slideListElement class="slide-list">
             <div id="slide-{{i}}" [ngClass]="currentItemIndex == i ? 'slide-item select-item' : 'slide-item'" *ngFor="let picture of showList; let i = index;">
@@ -14,6 +14,6 @@
             </div>
         </div>
         </div>
-        <div class="bottom-arrow cant-select" (click)="downArrow()" [style.display]="dataLength > oneGroupNum ? 'block': 'none'">DOWN</div>
+        <i class="anticon anticon-down bottom-arrow" (click)="downArrow()" [style.display]="dataLength > oneGroupNum ? 'block': 'none'"></i>
     </div>
 </div>

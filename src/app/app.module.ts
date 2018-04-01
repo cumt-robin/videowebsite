@@ -4,6 +4,7 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 
@@ -37,7 +38,8 @@ export function createTranslateLoader(http: Http) {
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),
       deps: [Http]
-    })
+    }),
+    NgZorroAntdModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

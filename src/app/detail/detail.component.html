@@ -9,9 +9,9 @@
       <div #videoParent [ngClass]="isFullScreen ? 'video-wrap-fullscreen': 'video-wrap'" [class.fixed-wrap]="isShowMiniVideo && !isFullScreen">
         <video #video autoplay src="{{vodData?.playUrl}}" (dblclick)="fullScreenControl()"></video>
         <div class="video-cover" *ngIf="isLoading || isPlayEnd">
-          <div class="loading-icon" *ngIf="isLoading"></div>
+          <i class="anticon anticon-loading-3-quarters loading-icon" *ngIf="isLoading"></i>
         </div>
-        <div id="close-mini" class="close-video cant-select" (click)="closeMini()" *ngIf="isShowMiniVideo && !isFullScreen">{{'close' | translate}}</div>
+        <i id="close-mini" class="anticon anticon-close close-video" (click)="closeMini()" *ngIf="isShowMiniVideo && !isFullScreen"></i>
         <div #barWrapRef class="progress-wrap" (mouseleave)="hidePreview()" [ngStyle]="{'visibility':isPlayEnd?'hidden':'visible','display':isShowMiniVideo && !isFullScreen?'none':'block'}">
           <div class="image-wrap">
             <div #listRef class="image-list" [ngStyle]="{visibility:showPreviewList?'visible':'hidden'}">
@@ -21,10 +21,10 @@
           <input #progressBar class="progress-bar" type="range" value="{{currentTime}}" min="0" max="{{duration}}" step="1" (input)="progressChange($event)" (mouseenter)="showPreview()" (mousemove)="mousemoveSeekbar($event)">
         </div>
         <div class="video-control" [style.display]="isShowMiniVideo && !isFullScreen ? 'none' : 'block'">
-          <span class="play-pause cant-select" (click)="playOrPause()">{{playbuttonState | translate}}</span>
+          <i class="anticon play-pause" [ngClass]="playbuttonState" (click)="playOrPause()"></i>
           <span class="video-time">{{currentShowTime}}&nbsp;/&nbsp;{{currentShowDuration}}</span>
-          <span class="control-button cant-select" (click)="fullScreenControl()">{{fullScreenState | translate}}</span>
-          <span class="control-button cant-select" (click)="setMuted()">{{'muted_switch' | translate}}</span>
+          <i class="anticon control-screen" [ngClass]="fullScreenState" (click)="fullScreenControl()"></i>
+          <span class="control-volume cant-select" (click)="setMuted()">{{'muted_switch' | translate}}</span>
           <input #volumeBar class="volume-bar" type="range" min="0" max="100" step="1" (input)="volumeChange($event)" (change)="volumeChange($event)">
           <span class="set-volume-hint">{{'set_volume' | translate}}</span>
         </div>

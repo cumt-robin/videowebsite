@@ -84,23 +84,23 @@
             width: 56px;
             height: 24px;
             left: 47px;
-            color: white;
-            background: red;
-            text-align: center;
             cursor: pointer;
+            font-size: 24px;
         }
         .bottom-arrow {
             position: relative;
             width: 56px;
             height: 24px;
             left: 47px;
-            color: white;
-            background: red;
-            text-align: center;
             cursor: pointer;
+            font-size: 24px;
         }
     }
 }
+
+// :host ::ng-deep .anticon-up {
+//     font-size: 24px;
+// }
  
 @media screen and(max-width: 1440px) {
     .slide-body .vod-info {width: 600px; bottom: 150px;}

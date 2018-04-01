@@ -1,34 +1,27 @@
 @import 'src/app/share/css/_loader.scss';
 app-test-animation, app-test-scroll, app-test-preview, app-highlight, app-test-directive, app-test-pipe, app-test-host {
     position: relative;
-    margin: auto;
+    margin: 0 auto;
     display: block;
 }
 app-test-animation {
-    margin-top: 80px;
-    width: 1380px;
+    padding-top: 80px;
 }
 app-test-scroll {
     margin-top: 40px;
-    width: 1380px;
 }
 app-test-preview {
     margin-top: 40px;
-    width: 1380px;
 }
 app-highlight {
     margin-top: 40px;
-    width: 1380px;
 }
 app-test-directive {
     margin-top: 40px;
-    width: 1380px;
 }
 app-test-pipe {
     margin-top: 40px;
-    width: 1380px;
 }
 app-test-host {
     margin-top: 40px;
-    width: 1380px;
 }

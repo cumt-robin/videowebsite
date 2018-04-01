@@ -1,5 +1,10 @@
 <header [class.scroll-header]="!isTop" [class.miniScreen-header]="isHeaderAbsolute">
   <nav>
+    <!-- <ul nz-menu [nzMode]="'horizontal'">
+      <li nz-menu-item>{{'home' | translate}}</li>
+      <li nz-menu-item>{{'livetv' | translate}}</li>
+      <li nz-menu-item>{{'ondemand' | translate}}</li>
+    </ul> -->
     <a class="head-href" routerLink="/home" routerLinkActive="href-active">{{'home' | translate}}</a>
     <a class="head-href" routerLink="/livetv" routerLinkActive="href-active">{{'livetv' | translate}}</a>
     <a class="head-href" routerLink="/ondemand" routerLinkActive="href-active">{{'ondemand' | translate}}</a>
@@ -18,11 +23,11 @@
   </nav>
 </header>
    
-<main>
-    <router-outlet></router-outlet>
-    <div class="goto-top" [ngStyle]="{'display': showGotoTopButton ? 'block': 'none'}" (click)="gotoTop()">{{'top' | translate}}</div>
-</main>
+<section>
+  <router-outlet></router-outlet>
+  <i class="anticon anticon-up-circle goto-top" [ngStyle]="{'display': showGotoTopButton ? 'block': 'none'}" (click)="gotoTop()"></i>
+</section>
 
 <footer>
-    <div class="foot-info">{{'all_rights_reserved' | translate}}</div>
+  <div class="foot-info">{{'all_rights_reserved' | translate}}</div>
 </footer>

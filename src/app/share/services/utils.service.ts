@@ -17,6 +17,9 @@ class UtilServices {
     }
 
     removeEvent(element: Object, eventType: string, callback: Function) {
+        if (!element) {
+            return;
+        }
         if (element['removeEventListener']) {
             element['removeEventListener'](eventType, callback, false);
         } else if (element['detachEvent']) {

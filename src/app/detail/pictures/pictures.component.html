@@ -5,8 +5,11 @@
     </div>
     <div class="big-poster-wrap" [@fadeInOut]="state" (@fadeInOut.done)="fadeInOutDone($event)" [style.display]="isShowBigPhoto ? 'block': 'none'" *ngIf="photoList?.length > 0">
       <div class="other-part" (click)="hideBigPhoto()"></div>
-      <div class="left-arrow cant-select" (click)="clickLeft()">Left</div>
-      <img class="big-poster" src="{{photoList[curIndex]}}">
-      <div class="right-arrow cant-select" (click)="clickRight()">Right</div>
+      <div class="show-part">
+          <i class="anticon anticon-left-circle-o left-arrow" (click)="clickLeft()"></i>
+          <img class="big-poster" src="{{photoList[curIndex]}}">
+          <i class="anticon anticon-right-circle-o right-arrow" (click)="clickRight()"></i>
+          <i class="anticon anticon-close-circle-o close-icon" (click)="hideBigPhoto()"></i>
+      </div>
     </div>
 </div>

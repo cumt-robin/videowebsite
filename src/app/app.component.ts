@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log($('body'));
     document.onscroll = this.scrollListener.bind(this);
     document.onkeydown = this.keydownListener.bind(this);
     window.onresize = this.resizeListener.bind(this);
@@ -62,7 +61,7 @@ export class AppComponent implements OnInit {
     this.curScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     if (this.curScrollTop > 0) {
       this.isTop = false;
-      if (this.curScrollTop > 1500) {
+      if (this.curScrollTop > document.body.clientHeight) {
         this.showGotoTopButton = true;
         this.goTopDisappearTimer = setTimeout(() => {
           this.showGotoTopButton = false;
@@ -141,8 +140,8 @@ export class AppComponent implements OnInit {
   }
 
   initTranslation() {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    this.translate.setDefaultLang('zh');
+    this.translate.use('zh');
   }
 
   showLanguageList() {
@@ -161,13 +160,11 @@ export class AppComponent implements OnInit {
   gotoTop() {
     this.targetScrollTop = this.curScrollTop;
     this.gotoTopTimer = setInterval(() => {
-      console.log(this);
-      // 每次定时器时间，都向上滚动当前值的10%
-      let scrollGap = Math.ceil(this.curScrollTop / 10);
+      // 每次定时器时间，都向上滚动当前值的15%
+      let scrollGap = Math.ceil(this.curScrollTop * 0.15);
       if (this.curScrollTop - scrollGap > 0) {
         // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。这里做一个200的差值，是为了防止一些页面变化的微抖动产生影响。
         if (this.targetScrollTop < this.curScrollTop - 200) {
-          console.log(this.targetScrollTop, this.curScrollTop);
           clearInterval(this.gotoTopTimer);
           return;
         }

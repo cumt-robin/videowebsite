@@ -27,8 +27,8 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
   public currentShowDuration = '00:00:00';
   public isPlayEnd = false;
   public isFullScreen = false;
-  public playbuttonState = 'pause';
-  public fullScreenState = 'enter_fullscreen';
+  public playbuttonState = 'anticon-pause-circle-o';
+  public fullScreenState = 'anticon-arrows-alt';
   public isShowMiniVideo = false;
   public isManualCloseMini = false;
   public backImgUrl = 'assets/image/p1.jpg';
@@ -98,9 +98,9 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
       EventService.on('VIDEO_SCREEN_CHANGE', (flag) => {
         this.isFullScreen = flag;
         if (this.isFullScreen) {
-          this.fullScreenState = 'exit_fullscreen';
+          this.fullScreenState = 'anticon-shrink';
         } else {
-          this.fullScreenState = 'enter_fullscreen';
+          this.fullScreenState = 'anticon-arrows-alt';
         }
       });
       EventService.removeAllListeners(['SHOW_MINI_VIDEO']);
@@ -160,7 +160,7 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
 
   videoPlayEnd() {
     this.isPlayEnd = true;
-    this.playbuttonState = 'replay';
+    this.playbuttonState = 'anticon-reload';
   }
 
   spaceControlPlay() {
@@ -175,9 +175,9 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.videoService.callPlayOrPause();
     if (this.videoService.isPlaying()) {
-      this.playbuttonState = 'pause';
+      this.playbuttonState = 'anticon-pause-circle-o';
     } else {
-      this.playbuttonState = 'play';
+      this.playbuttonState = 'anticon-play-circle-o';
     }
   }
 
@@ -208,7 +208,7 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
   checkContinuePlay() {
     if (this.videoService.isPaused()) {
       this.videoService.callPlay();
-      this.playbuttonState = 'pause';
+      this.playbuttonState = 'anticon-pause-circle-o';
     }
   }
 
