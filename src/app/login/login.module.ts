@@ -7,7 +7,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { LoginComponent } from './login.component';
 
 export const ROUTES: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent }
 ];
 

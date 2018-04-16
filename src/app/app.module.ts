@@ -14,7 +14,9 @@ import { OndemandModule } from './ondemand/ondemand.module';
 import { DetailModule } from './detail/detail.module';
 import { LoginModule } from './login/login.module';
 
-export const ROUTES: Routes = [];
+export const ROUTES: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
+];
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
