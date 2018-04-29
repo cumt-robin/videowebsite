@@ -76,7 +76,7 @@ export const testAnim = [
 
 export const PosterScale = [
   trigger('posterScale', [
-    state('focusEnd', style({transform: 'scale3d(1.1,1.1,1)', border: '2px solid white'})),
+    state('focusEnd', style({transform: 'scale3d(1.1,1.1,1)'})),
     state('blurEnd', style({transform: 'scale3d(1,1,1)'})),
     transition('* => focusEnd', useAnimation(focusScale, {params: {
         duration: '300',

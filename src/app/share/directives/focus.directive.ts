@@ -20,6 +20,6 @@ export class FocusDirective {
 
     @HostListener('mouseleave')
     leave() {
-        this.state = 'blureEnd';
+        this.state = 'blurEnd';
     }
 }

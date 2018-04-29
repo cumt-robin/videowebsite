@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChildren, Input, QueryList } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChildren, Input, QueryList, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EventService } from '../../services/event.service';
 import { VOD, VODColumn } from '../../services/dataType';
@@ -27,7 +27,10 @@ export class PostersComponent implements OnInit {
   public onePageWidth = 1320;
   public columns: Array<VODColumn> = [];
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public renderer: Renderer2
+  ) { }
 
   ngOnInit() {
     EventService.on('SCREEN_SIZE_CHANGE', () => {
@@ -98,4 +101,11 @@ export class PostersComponent implements OnInit {
     this.router.navigate(['detail/', vod.id]);
   }
 
+  posterScaleDone(e) {
+    if (e.toState === 'focusEnd') {
+      this.renderer.addClass(e.element, 'focus-item');
+    } else if (e.toState === 'blurEnd') {
+      this.renderer.removeClass(e.element, 'focus-item');
+    }
+  }
 }

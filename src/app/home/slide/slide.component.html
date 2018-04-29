@@ -1,6 +1,6 @@
 <div class="slide-body">
-    <div class="nav-cover"></div>
-    <img class="big-poster" src="{{showList[currentItemIndex]?.url}}" (click)="goToVodDetail()">
+    <div class="nav-cover" (click)="goToVodDetail()"></div>
+    <img class="big-poster" src="{{showList[currentItemIndex]?.url}}">
     <div class="vod-info">
         <div class="vod-name">{{showList[currentItemIndex]?.name}}</div>
         <div class="vod-introduce">{{showList[currentItemIndex]?.introduce}}</div>

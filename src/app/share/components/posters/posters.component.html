@@ -3,9 +3,7 @@
     <i class="anticon anticon-left-square left-arrow" (click)="clickLeftArrow(i)"></i>
     <div class="poster-wrap">
       <div #posterListsRef class="poster-list">
-        <div class="poster-item" *ngFor="let vod of column.vods; let j = index;">
-          <img #imgItem appFocus src="{{vod.url}}" [@posterScale] (click)="gotoDetailPage(vod)">
-        </div>
+        <div class="poster-item" [style.backgroundImage]="'url(' + vod.url + ')'" *ngFor="let vod of column.vods; let j = index;" appFocus [@posterScale] (@posterScale.done)="posterScaleDone($event)" (click)="gotoDetailPage(vod)"></div>
       </div>
     </div>
     <i class="anticon anticon-right-square right-arrow" (click)="clickRightArrow(i)"></i>
