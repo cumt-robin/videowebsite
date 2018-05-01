@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ShareModule } from '../share/share.module';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { DetailComponent } from './detail.component';
 import { IntroduceComponent } from './introduce/introduce.component';
@@ -17,7 +18,8 @@ export const ROUTES: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES),
-    ShareModule
+    ShareModule,
+    NgZorroAntdModule
   ],
   declarations: [DetailComponent, IntroduceComponent, PicturesComponent],
   providers: [VideoService, VideoDragService]

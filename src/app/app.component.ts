@@ -3,7 +3,8 @@ import { TranslateService } from 'ng2-translate';
 import { Router } from '@angular/router';
 import { EventService } from './share/services/event.service';
 import { UtilService } from './share/services/utils.service';
-import * as $ from 'jquery';
+import { NzNotificationService } from 'ng-zorro-antd';
+import { logout } from './share/services/interface';
 
 @Component({
   selector: 'app-root',
@@ -26,10 +27,13 @@ export class AppComponent implements OnInit {
   public goTopDisappearTimer: any = null;
   public isShowUserInfo = false;
   public userName = '';
+  public searchPlaceHolder = '奔跑吧2';
+  public searchContent = '';
 
   constructor(
     public translate: TranslateService,
-    private router: Router
+    public router: Router,
+    public _notification: NzNotificationService
   ) {
     this.initTranslation();
     this.checkClientWidth();
@@ -52,7 +56,12 @@ export class AppComponent implements OnInit {
     });
     EventService.removeAllListeners(['Login_Cookie_Expired']);
     EventService.on('Login_Cookie_Expired', () => {
+      this.isShowUserInfo = false;
       this.router.navigate(['login']);
+    });
+    EventService.removeAllListeners(['Notify']);
+    EventService.on('Notify', (data) => {
+      this.notify(data);
     });
   }
 
@@ -163,8 +172,8 @@ export class AppComponent implements OnInit {
       // 每次定时器时间，都向上滚动当前值的15%
       let scrollGap = Math.ceil(this.curScrollTop * 0.15);
       if (this.curScrollTop - scrollGap > 0) {
-        // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。这里做一个200的差值，是为了防止一些页面变化的微抖动产生影响。
-        if (this.targetScrollTop < this.curScrollTop - 200) {
+        // 如果自动向上的过程，用户自己滚动了，那么就停止自动向上。这里做一个400的差值，是为了防止一些页面变化的微抖动产生影响。
+        if (this.targetScrollTop < this.curScrollTop - 400) {
           clearInterval(this.gotoTopTimer);
           return;
         }
@@ -178,6 +187,26 @@ export class AppComponent implements OnInit {
         document.documentElement.scrollTop = 0;
       }
     }, 20);
+  }
+
+  search() {
+    console.log(this.searchContent);
+    this.router.navigate(['search']);
+  }
+
+  notify(params: any) {
+    this._notification.create(params.type, params.title, params.content, params.options);
+  }
+
+  userLogout() {
+    let req = {
+      name: this.userName
+    };
+    logout(req).then(() => {
+      this.isShowUserInfo = false;
+      localStorage.removeItem('isProfileLogin');
+      this.router.navigate(['login']);
+    });
   }
 
 }

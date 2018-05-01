@@ -4,7 +4,8 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NZ_NOTIFICATION_CONFIG } from 'ng-zorro-antd';
+import { ShareModule } from './share/share.module';
 
 import { AppComponent } from './app.component';
 
@@ -13,8 +14,9 @@ import { LivetvModule } from './livetv/livetv.module';
 import { OndemandModule } from './ondemand/ondemand.module';
 import { DetailModule } from './detail/detail.module';
 import { LoginModule } from './login/login.module';
+import { SearchModule } from './search/search.module';
 
-export const ROUTES: Routes = [
+export const APPROUTES: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
@@ -30,12 +32,14 @@ export function createTranslateLoader(http: Http) {
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, {useHash: true}),
+    RouterModule.forRoot(APPROUTES, {useHash: true}),
     HomeModule,
     LivetvModule,
     OndemandModule,
     DetailModule,
     LoginModule,
+    SearchModule,
+    ShareModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),
@@ -43,7 +47,11 @@ export function createTranslateLoader(http: Http) {
     }),
     NgZorroAntdModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NZ_NOTIFICATION_CONFIG, useValue: { nzMaxStack: 3, nzDuration: 3000 }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

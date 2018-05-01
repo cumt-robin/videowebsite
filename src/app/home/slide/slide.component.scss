@@ -22,6 +22,9 @@
         left: 100px;
         width: 800px;
         height: 160px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        overflow: hidden;
         .vod-name {
             position: relative;
             font-size: 32px;

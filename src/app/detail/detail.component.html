@@ -18,15 +18,18 @@
               <div class="image-item" [ngClass]="{'big-image':i===curIndex}" [ngStyle]="{background: back}" *ngFor="let back of previewBackgrounds;let i = index;" (mouseenter)="enterItem(i)"></div>
             </div>
           </div>
-          <input #progressBar class="progress-bar" type="range" value="{{currentTime}}" min="0" max="{{duration}}" step="1" (input)="progressChange($event)" (mouseenter)="showPreview()" (mousemove)="mousemoveSeekbar($event)">
+          <input #progressBar class="m_progress-bar" type="range" value="{{currentTime}}" min="0" max="{{duration}}" step="1" (input)="progressChange($event)" (mouseenter)="showPreview()" (mousemove)="mousemoveSeekbar($event)">
         </div>
         <div class="video-control" [style.display]="isShowMiniVideo && !isFullScreen ? 'none' : 'block'">
           <i class="anticon play-pause" [ngClass]="playbuttonState" (click)="playOrPause()"></i>
           <span class="video-time">{{currentShowTime}}&nbsp;/&nbsp;{{currentShowDuration}}</span>
           <i class="anticon control-screen" [ngClass]="fullScreenState" (click)="fullScreenControl()"></i>
-          <span class="control-volume cant-select" (click)="setMuted()">{{'muted_switch' | translate}}</span>
-          <input #volumeBar class="volume-bar" type="range" min="0" max="100" step="1" (input)="volumeChange($event)" (change)="volumeChange($event)">
-          <span class="set-volume-hint">{{'set_volume' | translate}}</span>
+          <div class="volume-bar-container" [style.display]="showVolumeBar ? 'block': 'none'" (mouseenter)="toggleVolume(true)" (mouseleave)="toggleVolume(false)">
+            <div class="inner-wrap">
+                <input #volumeBar class="volume-bar" type="range" min="0" max="100" step="1" (input)="volumeChange($event)" (change)="volumeChange($event)">
+            </div>
+          </div>
+          <i class="anticon anticon-sound volume-icon" (mouseenter)="toggleVolume(true)" (mouseleave)="toggleVolume(false)"></i>
         </div>
       </div>
     </div>

@@ -9,3 +9,9 @@ export function getHomeData(requestData?: Object) {
 export function getVODDetail(requestData: Object) {
     return AjaxHandler.ajax('GetVODDetail', requestData);
 }
+export function getVodHomeData(requestData?: Object) {
+    return AjaxHandler.ajax('GetVodHomeData', requestData);
+}
+export function logout(requestData: Object) {
+    return AjaxHandler.ajax('Logout', requestData);
+}

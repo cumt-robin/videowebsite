@@ -44,6 +44,7 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
   public vodID = '';
   public vodData: VOD;
   public recmColumns: Array<VODColumn>;
+  public showVolumeBar = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -154,8 +155,8 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   videoTimeUpdate() {
-    this.currentTime = this.videoService.getCurrentTime();
-    this.currentShowTime = this.videoService.getFormatTime(this.currentTime);
+      this.currentTime = this.videoService.getCurrentTime();
+      this.currentShowTime = this.videoService.getFormatTime(this.currentTime);
   }
 
   videoPlayEnd() {
@@ -243,6 +244,10 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
       this.volumeBar.nativeElement.value = this.volumeBeforeMute + '';
       this.videoService.setVolume(this.volumeBeforeMute / 100);
     }
+  }
+
+  toggleVolume(flag: boolean) {
+    this.showVolumeBar = flag;
   }
 
   closeMini() {

@@ -8,6 +8,10 @@
     <a class="head-href" routerLink="/home" routerLinkActive="href-active">{{'home' | translate}}</a>
     <a class="head-href" routerLink="/livetv" routerLinkActive="href-active">{{'livetv' | translate}}</a>
     <a class="head-href" routerLink="/ondemand" routerLinkActive="href-active">{{'ondemand' | translate}}</a>
+    <div class="search-container">
+      <nz-input class="search" [nzType]="'text'" [nzPlaceHolder]="searchPlaceHolder" [(ngModel)]="searchContent"></nz-input>
+      <i class="anticon anticon-search search-icon" (click)="search()"></i>
+    </div>
     <div class="language-wrap" (mouseenter)="showLanguageList()" (mouseleave)="hideLanguageList()">
       <div class="lang-set">{{'language' | translate}}
         <div class="bottom-triangle"></div>
@@ -18,7 +22,14 @@
       </ul>
     </div>
     <div class="user-nav" *ngIf="isShowUserInfo">
-      <div class="name">{{userName}}</div>
+      <nz-dropdown [nzPlacement]="'bottomCenter'">
+        <div class="name" nz-dropdown>{{userName}}<i class="anticon anticon-down"></i></div>
+        <ul nz-menu>
+          <li nz-menu-item>
+            <span class="logout-btn" (click)="userLogout()">{{'logout' | translate}}</span>
+          </li>
+        </ul>
+      </nz-dropdown>
     </div>
   </nav>
 </header>

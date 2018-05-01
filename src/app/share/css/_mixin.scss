@@ -1,6 +1,21 @@
-@mixin cant-select {
+@mixin _cant-select {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+}
+
+@mixin _transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+}
+
+@mixin _animation($value) {
+    animation: $value;
+    -webkit-animation: $value;
+    -moz-animation: $value;
+    -o-animation: $value;
 }

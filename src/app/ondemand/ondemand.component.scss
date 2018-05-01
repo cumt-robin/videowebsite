@@ -1,7 +1,20 @@
 @import 'src/app/share/css/_loader.scss';
+
+app-banner {
+    position: relative;
+    display: block;
+    padding-top: 80px;
+    margin: 0 auto;
+    width: 1468px;
+    height: 680px;
+}
 p {
     color: white;
     font-size: 20px;
     padding-top: 100px;
     text-align: center;
+}
+
+@media screen and(max-width: 1440px) {
+    app-banner {width: 1068px; height: 560px;}
 }

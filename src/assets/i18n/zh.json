@@ -36,5 +36,6 @@
     "user_name": "用户名",
     "password": "密码",
     "login": "登录",
-    "login_error": "用户名或者密码错误，请再次确认。"
+    "login_error": "用户名或者密码错误，请再次确认。",
+    "logout": "退出登录"
 }

@@ -72,9 +72,7 @@
                     position: absolute;
                     top: calc((100% - 40px) / 2);
                     left: calc((100% - 40px) / 2);
-                    animation: myRotate 2s ease-out infinite;
-                    -webkit-animation: myRotate 2s ease-out infinite;
-                    -moz-animation: myRotate 2s ease-out infinite;
+                    @include _animation(myRotate 2s ease-out infinite);
                 }
             }
             .video-control {
@@ -105,24 +103,33 @@
                     top: 7px;
                     position: relative;
                 }
-                .control-volume {
-                    cursor: pointer;
-                    float: right;
-                    margin-right: 16px;
-                    font-size: 14px;
-                    position: relative;
+                .volume-bar-container {
+                    top: -88px;
+                    right: -24px;
+                    position: absolute;
+                    width: 160px;
+                    @include _transform(rotate(270deg));
+                    padding: 0 20px;
+                    .inner-wrap {
+                        background: #000;
+                        width: 100%;
+                        padding: 0 10px;
+                        position: relative;
+                    }
+                    .volume-bar {
+                        position: relative;
+                        top: -2px;
+                        width: 100%;
+                        cursor: pointer;
+                    }
                 }
-                .volume-bar {
+                .volume-icon {
                     float: right;
-                    width: auto;
-                    margin: 0 10px;
-                    height: 16px;
+                    font-size: 16px;
                     top: 7px;
+                    margin-right: 20px;
                     position: relative;
-                }
-                .set-volume-hint {
-                    float: right;
-                    font-size: 14px;
+                    cursor: pointer;
                 }
             }
         }
@@ -144,9 +151,7 @@
                     position:absolute;
                     top: calc((100% - 40px) / 2);
                     left: calc((100% - 40px) / 2);
-                    animation: myRotate 2s ease-out infinite;
-                    -webkit-animation: myRotate 2s ease-out infinite;
-                    -moz-animation: myRotate 2s ease-out infinite;
+                    @include _animation(myRotate 2s ease-out infinite);
                 }
             }
             video {
@@ -185,23 +190,33 @@
                     top: 7px;
                     position: relative;
                 }
-                .control-volume {
-                    cursor: pointer;
-                    float: right;
-                    margin-right: 16px;
-                    font-size: 14px;
-                    position: relative;
+                .volume-bar-container {
+                    top: -88px;
+                    right: -24px;
+                    position: absolute;
+                    width: 160px;
+                    @include _transform(rotate(270deg));
+                    padding: 0 20px;
+                    .inner-wrap {
+                        background: #000;
+                        width: 100%;
+                        padding: 0 10px;
+                        position: relative;
+                    }
+                    .volume-bar {
+                        position: relative;
+                        top: -2px;
+                        width: 100%;
+                        cursor: pointer;
+                    }
                 }
-                .volume-bar {
+                .volume-icon {
                     float: right;
-                    margin: 0 10px;
-                    height: 16px;
+                    font-size: 16px;
                     top: 7px;
+                    margin-right: 20px;
                     position: relative;
-                }
-                .set-volume-hint {
-                    float: right;
-                    font-size: 14px;
+                    cursor: pointer;
                 }
             }
         }
@@ -225,9 +240,9 @@
             }
         }
         .progress-wrap {
-            position: relative;
+            position: absolute;
             width: 100%;
-            bottom: 175px;
+            bottom: 30px;
             .image-wrap {
                 width: 100%;
                 height: 120px;
@@ -258,7 +273,7 @@
                     }
                 }
             }
-            .progress-bar {
+            .m_progress-bar {
                 width: 100%;
                 position: relative;
                 cursor: pointer;
@@ -278,21 +293,71 @@
         margin-top: 40px;
     }
 }
- 
-@keyframes myRotate
-{
-    from {transform: rotate(0deg)}
-    to {transform: rotate(360deg)}
+
+input[type=range] {
+    // 去除浏览器默认的样式
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 300px;
+    border-radius: 10px;
+    &:focus {
+        outline: none;
+    }
+    // ::-webkit-slider-thumb是滑块的伪元素，firefox对应::-moz-range-thumb，ie对应::-ms-thumb
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: relative;
+        top: -2px;
+        background: #fff;
+    }
+    &::-moz-range-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: relative;
+        top: -2px;
+        background: #fff;
+    }
+    // ::-webkit-slider-runnable-track是轨道的伪元素，firefox对应::-moz-range-track，ie对应::-ms-track
+    &::-webkit-slider-runnable-track {
+        height: 6px;
+        border-radius: 10px; /*将轨道设为圆角的*/
+        background: #ee2828;
+    }
+    &::-moz-range-track {
+        height: 6px;
+        border-radius: 10px;
+        background: #ee2828;
+        position: relative;
+    }
+    &::-ms-fill-lower {
+        /*进度条已填充的部分*/
+        height: 22px;
+        border-radius: 10px;
+        background: linear-gradient(to right, #059CFA, white 100%, white);
+    }
+    &::-ms-fill-upper {
+        /*进度条未填充的部分*/
+        height: 22px;
+        border-radius: 10px;
+        background: #fff;
+    }
 }
-@-webkit-keyframes myRotate
-{
-    from {-webkit-transform: rotate(0deg)}
-    to {-webkit-transform: rotate(360deg)}
+.volume-bar::-webkit-slider-runnable-track {
+    background: #2692ff !important;
 }
-@-moz-keyframes myRotate
-{
-    from {-moz-transform: rotate(0deg)}
-    to {-moz-transform: rotate(360deg)}
+.volume-bar::-moz-range-track {
+    background: #2692ff !important;
+}
+
+:host ::ng-deep nz-progress .ant-progress-inner {
+    cursor: pointer;
 }
  
 @media screen and(max-width:1440px) {

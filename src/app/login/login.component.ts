@@ -27,9 +27,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    (() => {
-      this._notification.create('info', '温馨提示', '请使用测试账号登录，账号test，密码0', {nzDuration: 10000});
-    })();
+    let params = {
+      type: 'info',
+      title: '温馨提示',
+      content: '请使用测试账号登录，账号test，密码0',
+      options: {
+        duration: 10000
+      }
+    };
+    EventService.emit('Notify', params);
   }
 
   doLogin() {

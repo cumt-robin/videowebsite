@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from 'ng2-translate';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { PostersComponent } from './components/posters/posters.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 import { VerticalScroll } from './services/vertical-scroll.service';
 import { HorizontalScroll } from './services/horizontal-scroll.service';
@@ -21,7 +23,8 @@ import { AppendPipe } from './pipes/append.pipe';
     TranslateModule,
     FormsModule,
     BrowserModule,
-    CommonModule
+    CommonModule,
+    NgZorroAntdModule
   ],
   exports: [
     TranslateModule,
@@ -29,11 +32,12 @@ import { AppendPipe } from './pipes/append.pipe';
     BrowserModule,
     CommonModule,
     PostersComponent,
+    BannerComponent,
     ColorDirective,
     InnerHTMLDirective,
     AppendPipe
   ],
-  declarations: [PostersComponent, ColorDirective, InnerHTMLDirective, AppendPipe, FocusDirective],
+  declarations: [PostersComponent, BannerComponent, ColorDirective, InnerHTMLDirective, AppendPipe, FocusDirective],
   providers: [VerticalScroll, HorizontalScroll, AppCanActivate]
 })
 export class ShareModule { }

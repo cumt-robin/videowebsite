@@ -16,14 +16,14 @@
             width: 240px;
             height: 200px;
             margin-right: 20px;
-            cursor: pointer;
+            cursor: zoom-in;
             transition: all 0.2s cubic-bezier(.42, 0, .58, 1);
             &:last-child {
                 margin-right: 0;
             }
             &:hover{
                 box-shadow: 0 0 10px lightblue;
-                transform: scale3d(1.1,1.1,1);
+                @include _transform(scale3d(1.1,1.1,1));
             }
         }
     }

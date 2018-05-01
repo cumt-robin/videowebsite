@@ -1,0 +1,5 @@
+<nz-carousel [nzAutoPlay]="true" [nzEffect]="'fade'">
+    <div nz-carousel-content *ngFor="let item of banners;let i = index;" (click)="gotoDetailPage(i)">
+        <img src="{{item.url}}">
+    </div>
+</nz-carousel>

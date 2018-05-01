@@ -98,10 +98,10 @@ export class PostersComponent implements OnInit {
 
   gotoDetailPage(vod: VOD) {
     sessionStorage.setItem('VOD_DETAIL_PAGE_BACKGROUND_URL', vod.url);
-    this.router.navigate(['detail/', vod.id]);
+    this.router.navigate(['detail', vod.id]);
   }
 
-  posterScaleDone(e) {
+  posterScaleDone(e: any) {
     if (e.toState === 'focusEnd') {
       this.renderer.addClass(e.element, 'focus-item');
     } else if (e.toState === 'blurEnd') {

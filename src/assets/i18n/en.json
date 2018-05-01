@@ -36,5 +36,6 @@
     "user_name": "User Name",
     "password": "Password",
     "login": "Login",
-    "login_error": "User name or password is not right. Please Check it again."
+    "login_error": "User name or password is not right. Please Check it again.",
+    "logout": "Logout"
 }

@@ -36,6 +36,12 @@
         loadingElement.parentNode.removeChild(loadingElement);
       }
     };
+    var ua = window.navigator.userAgent.toLowerCase();
+    var isChrome = /chrome\/([\d.]+)/.test(ua);
+    var isFirefox = /firefox\/([\d.]+)/.test(ua);
+    if (isFirefox) {
+      document.write('<link rel="stylesheet" type="text/css" href="assets/css/_firefox.css">');
+    }
   </script>
 </head>
 

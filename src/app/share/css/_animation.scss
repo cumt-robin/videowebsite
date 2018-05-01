@@ -1,0 +1,42 @@
+@keyframes myRotate
+{
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+@-webkit-keyframes myRotate
+{
+    from {-webkit-transform: rotate(0deg)}
+    to {-webkit-transform: rotate(360deg)}
+}
+@-moz-keyframes myRotate
+{
+    from {-moz-transform: rotate(0deg)}
+    to {-moz-transform: rotate(360deg)}
+}
+
+@keyframes breathlight {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes breathlight
+{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes breathlight
+{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

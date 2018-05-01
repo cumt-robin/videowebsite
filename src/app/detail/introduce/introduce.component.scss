@@ -4,6 +4,11 @@ p {
     width: 1380px;
     margin: auto;
     text-indent: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
 }
  
 @media screen and(max-width:1440px) {
